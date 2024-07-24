@@ -40,7 +40,7 @@ const PlayerSearch = () => {
      <UserForm onSummonerInfo={handleSumonnerInfo} onUserName={setUsername} onTag={setTag}/>
     </div>
     {!loading && !error && summonerInfo && (
-      <div className="flex justify-start mt-4 px-52">
+      <div className="flex justify-center md:justify-start mt-4 mx-0  md:mx-52">
       <PlayerInfo summonerInfo={summonerInfo} username={username} tag={tag} iconUrl={profileIconUrl}/>
     </div>
     )}
