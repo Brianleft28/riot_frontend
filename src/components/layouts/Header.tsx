@@ -17,7 +17,6 @@ const Header = () => {
     "Help & Feedback",
     "Log Out",
   ];
-
     return (
         <Navbar onMenuOpenChange={setIsMenuOpen}>
               <NavbarContent>
