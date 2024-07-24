@@ -43,3 +43,7 @@ export const getSummonnerInfoByPuuid = async (puuid: string) => {
         console.error(error)
     }
 }
+
+export const getProfileIconUrl = async (profileIconId: number) => {
+    return `https://ddragon.leagueoflegends.com/cdn/14.14.1/img/profileicon/${profileIconId}.png`
+}

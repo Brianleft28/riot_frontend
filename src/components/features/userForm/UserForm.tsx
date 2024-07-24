@@ -23,21 +23,41 @@ const UserForm: React.FC<UserFormProps> = ({onSummonerInfo, onUserName, onTag}) 
       const puuid = response.puuid
       // Obtener la información del usuario con el puuid
       const summonerInfo = await getSummonnerInfoByPuuid(puuid)
-      console.log(summonerInfo)
       onSummonerInfo(summonerInfo)
       onUserName(username)
       onTag(tag)
+      clearInputs()
+
     } catch (error) {
       console.error(error)
     }
   }
+
+  const clearInputs = () => {
+    setUsername('');
+    setTag('');
+  };
   return (
-    <form onSubmit={handleSearch} className="flex flex-col gap-2">
+    <form onSubmit={handleSearch} className="flex md:flex-row flex-col gap-2 justify-center items-center">
       <div key={'username'} className="max-w-xs">
-       <Input onChange={(e)=> setUsername(e.target.value)} id="username" name="username" type="username" variant={'underlined'} label="Game Name" />
+       <Input 
+       value={username}
+       onChange={(e)=> setUsername(e.target.value)} 
+       id="username" 
+       name="username" 
+       type="username" 
+       variant={'underlined'} 
+       label="Game Name" />
       </div>
       <div key={'tagline'} className="max-w-xs">
-       <Input onChange={(e)=> {setTag(e.target.value)}} id="tag" name="tag" type="tagname" variant={'underlined'} label="Tag Name" />
+       <Input 
+       value={tag}
+       onChange={(e)=> {setTag(e.target.value)}} 
+       id="tag" 
+       name="tag" 
+       type="tagname" 
+       variant={'underlined'} 
+       label="Tag Name" />
       </div>
       <Button color="primary" variant="bordered" type="submit">
         Buscar
