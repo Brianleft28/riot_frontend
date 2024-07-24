@@ -1,13 +1,18 @@
 import './App.css'
-import UserForm from './components/userForm/UserForm'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import PlayerSearch from './pages/PlayerSearch'
+import Home from './pages/Home';
 
 function App() {
 
   return (
     <>
-    <div>
-      <UserForm />
-    </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<PlayerSearch />} />
+        </Routes>
+      </Router>
     </>
   )
 }
