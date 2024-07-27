@@ -1,4 +1,4 @@
-const apiKey = 'RGAPI-2aa210e9-61dd-4a41-924f-05483d2c08a1'
+const apiKey = 'RGAPI-c15430b2-2abb-4f25-8da0-b1ab23484e59'
 
 export const getAccountPuuid = async (username: string, tag: string) => {
     if (!apiKey) {

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Summoner } from "../../../types";
 
 interface PlayerInfoProps {
@@ -9,24 +8,25 @@ interface PlayerInfoProps {
   }
 const PlayerInfo:React.FC<PlayerInfoProps> = ({ summonerInfo, username, tag, iconUrl }) => {
   
-    useEffect(() => {
-        // Add any additional logic here
-        console.log(summonerInfo);
-    }, [summonerInfo, username, tag, iconUrl]);
-
     return (
-    <div className="flex flex-col justify-center gap-0.5 border p-2 rounded border-foreground-100">
-    {/* Render the player information here */}
-    <div className="flex justify-around">
-    <p>{username}</p>
-    <p>#{tag.toUpperCase()}</p>
-    </div>
-    <img className="max-w-[150px]" src={iconUrl} alt="Profile Icon" />
-    <div>
-        Summoner level: {summonerInfo.summonerLevel}
-    </div>
-    {/* Add more details as needed */}
-  </div>
+      <>
+        <div className="flex flex-col justify-center gap-0.5 p-2 rounded">
+          <div className="flex flex-row justify-around h-full mb-1 items-center">
+            <p className="text-foreground/80 font-bold text-xl ">{username}</p>
+            <p className="text-foreground/50">#{tag.toUpperCase()}</p>
+          </div>
+
+        <div>
+          <img className="max-w-[150px] rounded-md border-foreground/30 border" src={iconUrl} alt="Profile Icon" />
+            <div className="flex justify-center -mt-3">
+              <div className="w-fit bg-white shadow-md text-foreground-100 font-bold px-2 rounded-md ">
+                  {summonerInfo.summonerLevel}
+              </div>
+            </div>
+        </div>
+        </div>
+
+      </>
   )
 }
 export default PlayerInfo

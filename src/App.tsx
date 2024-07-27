@@ -10,7 +10,7 @@ function App() {
     <>
       <Router>
         <Header />
-          <div className='bg-gradient-to-br from-foreground-100 to-foreground/5 justify-center items-center min-h-[100vh] px-10 py-5'>
+          <div className='bg-gradient-to-br from-background via-secondary-50 to-background-50 justify-center items-center min-h-[100vh] px-10 py-5'>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/searchPlayer" element={<PlayerSearch />} />
